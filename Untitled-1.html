@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #ff4d4d;
+            --dark-color: #333;
+            --light-color: #fff;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff4d4d;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        #home {
+            background: #333;
+            color: #fff;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h2 {
+            color: #ff4d4d;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4d4d;
+            color:#fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        #education {
+            background: #fff;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .education-card:hover{
+            background-color: rgb(255, 244, 244);
+            transform: translateX(10px);
+            box-shadow: 0px 0px 12px black;
+        }
+
+        #projects {
+            background: #ff4d4d;
+            color: #fff;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            color:#333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 15px rgb(254, 254, 254);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+        #skills {
+            background: #fff;
+        }
+
+        .skill-bars {
+            margin-top: 2rem;
+        }
+
+        .skill-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-bar h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #ff4d4d;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, I'm <span style="color: var(--primary-color);">Atharv Dubey</span></h1>
+                    <h2>Full Stack <span style="color: white;">Developer</span> </h2>
+                    <p>I create beautiful and functional websites with a focus on user experience.</p>
+                    <br>
+                    <a href="#projects" class="btn">View My Work</a>
+                </div>
+                <div class="hero-image">
+                    <img src="profile.jpg" alt="Profile Image" style="width: 250px; border-radius: 50%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2>Education</h2> <br>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>B.Tech</h3>
+                    <p>Information Technology</p>
+                    <p>Ambedkar Engineering College, Jalandhar</p>
+                    <p>2024 - Present</p>
+                </div>
+            </div> <br> <br>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Senior Secondary Education</h3>
+                    <p>Science - Non Medical</p>
+                    <p>Seth Anandram Jaipuria School, Ghaziabad</p>
+                    <p>2021-2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2> <br>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <div class="project-info">
+                        <h3>URL Shortener (bit.ly clone)</h3> <br>
+                        <p>A complex URL Shortener with features like Custom URL.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Scientific Calculator</h3> <br>
+                        <p>An advanced calculator for Algebra, Multi variable Calculus and Geometry.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Video Game Streaming Application (VoltStream)</h3> <br>
+                        <p>A video game streaming app which allowes users to play PC games on their mobile phones.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Front End for Website</h3> <br>
+                        <p>A video game streaming app which allowes users to play PC games on their mobile phones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill-bars">
+                <div class="skill-bar">
+                    <h3>HTML/CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h3>DSA</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <h3>MERN Stack</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const skillSection = document.querySelector('#skills');
+        const progressBars = document.querySelectorAll('.progress');
+        
+        function showProgress() {
+            const sectionPos = skillSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight / 1.3;
+            
+            if(sectionPos < screenPos) {
+                progressBars.forEach(progress => {
+                    const value = progress.dataset.progress;
+                    progress.style.width = value + '%';
+                });
+            }
+        }
+
+        window.addEventListener('scroll', showProgress);
+    </script>
+</body>
+</html>
